@@ -26,5 +26,5 @@ jobs:
       uses: microsoft/ps-rule@bewhite/dev
       with:
         inputType: 'repository'
-        modules: PSRule.Rules.Azure
+#         modules: PSRule.Rules.Azure
         source: '.ps-rule/'
