@@ -16,6 +16,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    env:
+      SYSTEM_DEBUG: 'true'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -23,7 +25,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run PSRule analysis
-      uses: microsoft/ps-rule@master
+      uses: microsoft/ps-rule@bewhite/dev
       with:
         inputType: 'repository'
         modules: PSRule.Rules.Azure
