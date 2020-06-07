@@ -27,3 +27,4 @@ jobs:
       with:
         inputType: 'repository'
         modules: PSRule.Rules.Azure
+        source: '.ps-rule/'
