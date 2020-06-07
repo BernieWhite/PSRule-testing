@@ -25,4 +25,4 @@ jobs:
     - name: Run PSRule
       uses: BernieWhite/PSRule-actions@bewhite/fix-for-release
       with:
-        source: '.ps-rule/'
+        inputType: 'repository'
