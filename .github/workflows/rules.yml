@@ -23,6 +23,6 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run PSRule
-      uses: BernieWhite/PSRule-actions@bewhite/fix-for-release
+      uses: microsoft/ps-rule@master
       with:
         inputType: 'repository'
