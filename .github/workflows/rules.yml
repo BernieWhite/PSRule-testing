@@ -23,14 +23,13 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     
-    - uses: actions/checkout@v2
-      with:
-        repository: BernieWhite/Rules.BernieWhite
-        path: .ps-rule/private/
+#     - uses: actions/checkout@v2
+#       with:
+#         repository: BernieWhite/Rules.BernieWhite
+#         path: .ps-rule/private/
 
     - name: Run PSRule analysis
       uses: microsoft/ps-rule@master
       with:
         inputType: 'repository'
 #         modules: PSRule.Rules.Azure
-        source: '.ps-rule/'
