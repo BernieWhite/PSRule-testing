@@ -25,7 +25,7 @@ jobs:
     
     - uses: actions/checkout@v2
       with:
-        repository: BernieWhite/Rules-bewhite
+        repository: BernieWhite/Rules.BernieWhite
         path: .ps-rule/private/
 
     - name: Run PSRule analysis
