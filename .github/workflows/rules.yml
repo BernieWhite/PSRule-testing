@@ -26,3 +26,4 @@ jobs:
       uses: microsoft/ps-rule@master
       with:
         inputType: 'repository'
+        modules: PSRule.Rules.Azure
