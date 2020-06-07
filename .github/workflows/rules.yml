@@ -29,7 +29,7 @@ jobs:
         path: .ps-rule/private/
 
     - name: Run PSRule analysis
-      uses: microsoft/ps-rule@bewhite/dev
+      uses: microsoft/ps-rule@master
       with:
         inputType: 'repository'
 #         modules: PSRule.Rules.Azure
