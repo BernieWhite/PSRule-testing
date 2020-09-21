@@ -29,7 +29,7 @@ jobs:
 #         path: .ps-rule/private/
 
     - name: Run PSRule analysis
-      uses: microsoft/ps-rule@master
+      uses: microsoft/ps-rule@main
       with:
         inputType: 'repository'
         modules: PSRule.Rules.Azure
@@ -39,7 +39,7 @@ jobs:
       shell: pwsh
 
     - name: Run PSRule analysis
-      uses: microsoft/ps-rule@master
+      uses: microsoft/ps-rule@main
       with:
         inputType: inputPath
         inputPath: out/templates/
