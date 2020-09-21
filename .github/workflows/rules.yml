@@ -35,7 +35,7 @@ jobs:
         modules: PSRule.Rules.Azure
 
     - name: Run export templates
-      run: Get-AzRuleTemplateLink | Export-AzTemplateRuleData -OutputPath out/templates/;
+      run: Install-Module PSRule.Rules.Azure -Force; Get-AzRuleTemplateLink | Export-AzTemplateRuleData -OutputPath out/templates/;
       shell: pwsh
 
     - name: Run PSRule analysis
