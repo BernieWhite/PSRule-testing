@@ -22,7 +22,7 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    
+
 #     - uses: actions/checkout@v2
 #       with:
 #         repository: BernieWhite/Rules.BernieWhite
@@ -32,4 +32,15 @@ jobs:
       uses: microsoft/ps-rule@master
       with:
         inputType: 'repository'
-#         modules: PSRule.Rules.Azure
+        modules: PSRule.Rules.Azure
+
+    - name: Run export templates
+      run: Get-AzRuleTemplateLink | Export-AzTemplateRuleData -OutputPath out/templates/;
+      shell: pwsh
+
+    - name: Run PSRule analysis
+      uses: microsoft/ps-rule@master
+      with:
+        inputType: inputPath
+        inputPath: out/templates/
+        modules: PSRule.Rules.Azure
