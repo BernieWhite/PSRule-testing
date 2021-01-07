@@ -43,4 +43,5 @@ jobs:
       with:
         inputType: inputPath
         inputPath: out/templates/
-        modules: PSRule.Rules.Azure
+        modules: PSRule.Rules.Azure, PSRule.Rules.CAF
+        prerelease: true
