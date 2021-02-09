@@ -2,3 +2,5 @@
 configuration:
   # Use alternative environment tag
   CAF_EnvironmentTag: env
+  # Use the following environments
+  CAF_Environments: [ 'prod', 'dev', 'uat', 'test' ]
