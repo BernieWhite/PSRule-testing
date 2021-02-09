@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "metadata": {
+        "template": "./template.json"
+    },
+    "parameters": {
+        "storageAccountName": {
+            "value": "stexample001"
+        },
+        "sku": {
+            "value": "Standard_GRS"
+        },
+        "containers": {
+            "value": [
+                {
+                    "name": "logs",
+                    "publicAccess": "None",
+                    "metadata": {}
+                }
+            ]
+        },
+        "lifecycleRules": {
+            "value": []
+        },
+        "blobSoftDeleteDays": {
+            "value": 7
+        },
+        "containerSoftDeleteDays": {
+            "value": 7
+        },
+        "shares": {
+            "value": []
+        },
+        "shareSoftDeleteDays": {
+            "value": 7
+        },
+        "allowBlobPublicAccess": {
+            "value": false
+        },
+        "tags": {
+            "value": {
+                "service": "data-platform",
+                "env": "prod"
+            }
+        }
+    }
+}
