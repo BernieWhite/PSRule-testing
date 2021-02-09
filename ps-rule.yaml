@@ -1,0 +1,4 @@
+
+configuration:
+  # Use alternative environment tag
+  CAF_EnvironmentTag: env
