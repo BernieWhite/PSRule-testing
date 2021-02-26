@@ -23,7 +23,7 @@ jobs:
 
     
     - name: Custom checks
-      run: $Env:GITHUB_WORKSPACE/custom-checks.ps1
+      run: . ./custom-checks.ps1
       shell: pwsh
 
 
