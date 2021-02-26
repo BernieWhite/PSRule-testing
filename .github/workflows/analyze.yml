@@ -21,6 +21,12 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
+    
+    - name: Custom checks
+      run: custom-checks.ps1
+      shell: pwsh
+
+
 #     - uses: actions/checkout@v2
 #       with:
 #         repository: BernieWhite/Rules.BernieWhite
@@ -42,7 +48,3 @@ jobs:
         inputPath: out/templates/
         modules: PSRule.Rules.Azure,PSRule.Rules.CAF
         prerelease: true
-
-    - name: Custom checks
-      run: custom-checks.ps1
-      shell: pwsh
