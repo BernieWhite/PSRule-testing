@@ -1,3 +1,7 @@
+param (
+    [string]$Token
+)
+
 
 
 $uri = "https://api.github.com/repos/$Env:GITHUB_REPOSITORY/check-runs"
@@ -14,7 +18,7 @@ $create = @{
 }
 
 $headers = @{
-    Authorization = "token $Env:GITHUB_TOKEN"
+    Authorization = "Bearer $Token"
     Accept = 'application/vnd.github.v3+json'
 }
 

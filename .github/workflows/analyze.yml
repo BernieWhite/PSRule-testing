@@ -23,7 +23,7 @@ jobs:
 
     
     - name: Custom checks
-      run: . ./custom-checks.ps1
+      run: . ./custom-checks.ps1 -Token ${{ secrets.GITHUB_TOKEN }}
       shell: pwsh
 
 
