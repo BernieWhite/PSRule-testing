@@ -7,13 +7,14 @@ param (
 $uri = "https://api.github.com/repos/$Env:GITHUB_REPOSITORY/check-runs"
 
 $create = @{
-    name = 'custom-check'
+    name = 'PSRule'
     head_sha = $Env:GITHUB_SHA
     status = 'completed'
     conclusion = 'success'
     output = @{
         title = 'Using custom checks'
         summary = '**Go custom checks**'
+        text = "Some additional **test**"
     }
 }
 
