@@ -35,7 +35,8 @@ jobs:
     - name: Run PSRule analysis
       uses: microsoft/ps-rule@main
       with:
-        modules: PSRule.Rules.Azure
+        modules: PSRule.Rules.Azure,PSRule.Rules.GitHub
+        prerelease: true
 
     - name: Run export templates
       run: Install-Module PSRule.Rules.Azure -Force; Get-AzRuleTemplateLink | Export-AzTemplateRuleData -OutputPath out/templates/;

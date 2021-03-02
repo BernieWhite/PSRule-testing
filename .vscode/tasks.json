@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Analyze repository",
+            "type": "shell",
+            "command": "Get-AzRuleTemplateLink | Export-AzTemplateRuleData -OutputPath out/templates/; Assert-PSRule -Module PSRule.Rules.Azure -f out/templates/",
+            "problemMatcher": []
+        }
+    ]
+}
