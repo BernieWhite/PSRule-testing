@@ -32,6 +32,12 @@ jobs:
 #         repository: BernieWhite/Rules.BernieWhite
 #         path: .ps-rule/private/
 
+    - name: Run repo data
+      run: Install-Module PSRule.Rules.GitHub -Force -AllowPrerelease; Export-GitHubRuleData -UseGitHubToken -OutputPath out/templates/;
+      shell: pwsh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Run PSRule analysis
       uses: microsoft/ps-rule@main
       with:
