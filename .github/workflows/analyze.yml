@@ -33,7 +33,7 @@ jobs:
 #         path: .ps-rule/private/
 
     - name: Run repo data
-      run: Install-Module PSRule.Rules.GitHub -Force -AllowPrerelease; Export-GitHubRuleData -UseGitHubToken -OutputPath out/templates/;
+      run: Install-Module PSRule.Rules.GitHub -Force -AllowPrerelease; Export-GitHubRuleData -UseGitHubToken -OutputPath out/repo/;
       shell: pwsh
 
     - name: Run PSRule analysis
@@ -45,6 +45,14 @@ jobs:
     - name: Run export templates
       run: Install-Module PSRule.Rules.Azure -Force; Get-AzRuleTemplateLink | Export-AzTemplateRuleData -OutputPath out/templates/;
       shell: pwsh
+
+    - name: Run PSRule analysis
+      uses: microsoft/ps-rule@main
+      with:
+        inputType: inputPath
+        inputPath: out/repo/
+        modules: PSRule.Rules.GitHub
+        prerelease: true
 
     - name: Run PSRule analysis
       uses: microsoft/ps-rule@main
