@@ -1,3 +1,3 @@
 
-git diff --name-only main...
+git diff --name-only main...HEAD
 
