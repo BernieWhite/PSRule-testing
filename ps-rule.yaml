@@ -3,6 +3,10 @@ convention:
   include:
   - '.\GH-Hook'
 
+input:
+  pathIgnore:
+  - 'out/'
+
 configuration:
   # Use alternative environment tag
   CAF_EnvironmentTag: env
