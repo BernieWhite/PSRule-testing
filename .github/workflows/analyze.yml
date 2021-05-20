@@ -35,9 +35,9 @@ jobs:
 #         repository: BernieWhite/Rules.BernieWhite
 #         path: .ps-rule/private/
 
-    - name: Run repo data
-      run: Install-Module PSRule.Rules.GitHub -Force -AllowPrerelease; Export-GitHubRuleData -UseGitHubToken -OutputPath out/repo/;
-      shell: pwsh
+    # - name: Run repo data
+    #   run: Install-Module PSRule.Rules.GitHub -Force -AllowPrerelease; Export-GitHubRuleData -UseGitHubToken -OutputPath out/repo/;
+    #   shell: pwsh
 
     - name: Run PSRule analysis
       uses: microsoft/ps-rule@main
@@ -49,7 +49,7 @@ jobs:
       run: Install-Module PSRule.Rules.Azure -Force; Get-AzRuleTemplateLink | Export-AzTemplateRuleData -OutputPath out/templates/;
       shell: pwsh
 
-    - name: Run PSRule analysis
+    - name: Run GitHub analysis
       uses: microsoft/ps-rule@main
       with:
         inputType: inputPath
@@ -57,7 +57,7 @@ jobs:
         modules: PSRule.Rules.GitHub
         prerelease: true
 
-    - name: Run PSRule analysis
+    - name: Run Azure analysis
       uses: microsoft/ps-rule@main
       with:
         inputType: inputPath

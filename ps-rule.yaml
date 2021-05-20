@@ -1,4 +1,8 @@
 
+convention:
+  include:
+  - '.\GH-Hook'
+
 configuration:
   # Use alternative environment tag
   CAF_EnvironmentTag: env
