@@ -6,6 +6,14 @@
             "type": "shell",
             "command": "Get-AzRuleTemplateLink | Export-AzTemplateRuleData -OutputPath out/templates/; Assert-PSRule -Module PSRule.Rules.Azure -f out/templates/",
             "problemMatcher": []
+        },
+        {
+            "type": "PSRule",
+            "problemMatcher": [],
+            "label": "PSRule: Run analysis",
+            "modules": [
+                "PSRule.Rules.GitHub"
+            ]
         }
     ]
 }
