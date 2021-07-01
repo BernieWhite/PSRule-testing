@@ -42,25 +42,25 @@ jobs:
     - name: Run PSRule analysis
       uses: microsoft/ps-rule@main
       with:
-        modules: PSRule.Rules.Azure,PSRule.Rules.GitHub
+        modules: PSRule.Rules.Azure,PSRule.Rules.GitHub,PSRule.Rules.CAF
         prerelease: true
 
-    - name: Run export templates
-      run: Install-Module PSRule.Rules.Azure -Force; Get-AzRuleTemplateLink | Export-AzTemplateRuleData -OutputPath out/templates/;
-      shell: pwsh
+    # - name: Run export templates
+    #   run: Install-Module PSRule.Rules.Azure -Force; Get-AzRuleTemplateLink | Export-AzTemplateRuleData -OutputPath out/templates/;
+    #   shell: pwsh
 
-    - name: Run GitHub analysis
-      uses: microsoft/ps-rule@main
-      with:
-        inputType: inputPath
-        inputPath: out/repo/
-        modules: PSRule.Rules.GitHub
-        prerelease: true
+    # - name: Run GitHub analysis
+    #   uses: microsoft/ps-rule@main
+    #   with:
+    #     inputType: inputPath
+    #     inputPath: out/repo/
+    #     modules: PSRule.Rules.GitHub
+    #     prerelease: true
 
-    - name: Run Azure analysis
-      uses: microsoft/ps-rule@main
-      with:
-        inputType: inputPath
-        inputPath: out/templates/
-        modules: PSRule.Rules.Azure,PSRule.Rules.CAF
-        prerelease: true
+    # - name: Run Azure analysis
+    #   uses: microsoft/ps-rule@main
+    #   with:
+    #     inputType: inputPath
+    #     inputPath: out/templates/
+    #     modules: PSRule.Rules.Azure,PSRule.Rules.CAF
+    #     prerelease: true
