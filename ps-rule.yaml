@@ -12,3 +12,5 @@ configuration:
   CAF_EnvironmentTag: env
   # Use the following environments
   CAF_Environments: [ 'prod', 'dev', 'uat', 'test' ]
+
+  AZURE_PARAMETER_FILE_EXPANSION: true
