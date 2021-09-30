@@ -27,6 +27,8 @@ $headers = @{
 Invoke-RestMethod -Method Post -Uri $uri -Headers $headers -Body ($create | ConvertTo-Json -Depth 100);
 
 
-"::error file=custom-checks.ps1,line=1,col=1,endColumn=8,title=Better parameter blocks::Params without attribute. https://github.com/microsoft/PSRule"
+"::error file=custom-checks.ps1,line=1,col=1,endColumn=8,title=Better parameter blocks::Params without attribute.<<EOL"
+"This is some extra data."
+"EOL"
 
 "::notice::An example notice"
