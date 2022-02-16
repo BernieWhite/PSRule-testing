@@ -1,0 +1,106 @@
+{
+    "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+    "version": "2.1.0",
+    "runs": [
+        {
+            "tool": {
+                "driver": {
+                    "guid": "0130215d-58eb-4887-b6fa-31ed02500569",
+                    "name": "PSRule",
+                    "organization": "Microsoft Corporation",
+                    "semanticVersion": "0.0.1+9a56aa8fae25427c43254df008fd41c1f0072de7",
+                    "informationUri": "https://aka.ms/ps-rule"
+                },
+                "extensions": [
+                    {
+                        "guid": "7bfb5234-1648-4e52-956c-42f303d416cb",
+                        "name": "PSRule.Rules.MSFT.OSS",
+                        "organization": "Microsoft Corporation",
+                        "version": "0.0.1",
+                        "informationUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS",
+                        "rules": [
+                            {
+                                "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.License",
+                                "name": "MSFT.OSS.License",
+                                "fullDescription": {
+                                    "text": "Code files should include standard MIT license header."
+                                },
+                                "messageStrings": {
+                                    "recommendation": {
+                                        "text": "Consider adding standard license header to code files."
+                                    }
+                                },
+                                "defaultConfiguration": {
+                                    "level": "error"
+                                },
+                                "helpUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.License.md"
+                            }
+                        ],
+                        "associatedComponent": {
+                            "name": "PSRule"
+                        }
+                    }
+                ]
+            },
+            "invocations": [
+                {
+                    "executionSuccessful": true
+                }
+            ],
+            "versionControlProvenance": [
+                {
+                    "repositoryUri": "https://github.com/BernieWhite/PSRule-testing",
+                    "revisionId": "c5fbe549a8b73179da831ec089b6f6c54abf3e51",
+                    "branch": "bewhite/bad-templates"
+                }
+            ],
+            "originalUriBaseIds": {
+                "REPOROOT": {
+                    "description": {
+                        "text": "The directory into which the repo was cloned."
+                    }
+                }
+            },
+            "results": [
+                {
+                    "rule": {
+                        "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.License",
+                        "toolComponent": {
+                            "name": "PSRule.Rules.MSFT.OSS",
+                            "index": 0,
+                            "guid": "7bfb5234-1648-4e52-956c-42f303d416cb"
+                        }
+                    },
+                    "level": "error",
+                    "message": {
+                        "text": "Consider adding standard license header to code files."
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "build.ps1",
+                                    "uriBaseId": "REPOROOT"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            },
+                            "logicalLocations": [
+                                {
+                                    "name": "build.ps1",
+                                    "fullyQualifiedName": ".ps1/build.ps1",
+                                    "kind": "object"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "automationDetails": {
+                "id": "542c7c1f90066206aa4aa0a8d39bf892e640edc2"
+            },
+            "columnKind": "utf16CodeUnits"
+        }
+    ]
+}
