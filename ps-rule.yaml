@@ -1,6 +1,7 @@
 
 convention:
   include:
+  - '.\InfoHook'
   - '.\GH-Hook'
 
 input:
