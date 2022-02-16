@@ -2,6 +2,8 @@
 
 Export-PSRuleConvention 'InfoHook' -Initialize {
     Write-Host "This is a host object"
+} -End {
+    Write-Host "This is a host object"
 }
 
 Export-PSRuleConvention 'GH-Hook' -If { ![String]::IsNullOrEmpty($Env:GITHUB_REPOSITORY) -and $TargetObject -is [PSRule.Data.RepositoryInfo] } -Begin {
