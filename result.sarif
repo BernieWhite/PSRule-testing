@@ -96,11 +96,11 @@
                                     {
                                         "target": {
                                             "id": "101",
-                                            "guid": "10F28368-3A92-4396-A318-75B9743282F6",
+                                            "guid": "1A567403-868F-405E-92CF-771A9ECB03A1",
                                             "index": 0,
                                             "toolComponent": {
                                                 "name": "Well-Architected",
-                                                "guid": "1A567403-868F-405E-92CF-771A9ECB03A1",
+                                                "guid": "10F28368-3A92-4396-A318-75B9743282F6",
                                                 "index": 0
                                             }
                                         },
