@@ -8,7 +8,7 @@
                     "guid": "0130215d-58eb-4887-b6fa-31ed02500569",
                     "name": "PSRule",
                     "organization": "Microsoft Corporation",
-                    "semanticVersion": "2.0.0-B2202056+9a56aa8fae25427c43254df008fd41c1f0072de7",
+                    "semanticVersion": "0.0.1+9a56aa8fae25427c43254df008fd41c1f0072de7",
                     "informationUri": "https://aka.ms/ps-rule"
                 },
                 "extensions": [
@@ -16,7 +16,7 @@
                         "guid": "7bfb5234-1648-4e52-956c-42f303d416cb",
                         "name": "PSRule.Rules.MSFT.OSS",
                         "organization": "Microsoft Corporation",
-                        "version": "1.0.1",
+                        "version": "0.0.1",
                         "informationUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS",
                         "rules": [
                             {
@@ -33,7 +33,7 @@
                                 "defaultConfiguration": {
                                     "level": "error"
                                 },
-                                "helpUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/src/PSRule.Rules.MSFT.OSS/en/MSFT.OSS.License.md"
+                                "helpUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.License.md"
                             },
                             {
                                 "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.Community",
@@ -49,7 +49,7 @@
                                 "defaultConfiguration": {
                                     "level": "error"
                                 },
-                                "helpUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/src/PSRule.Rules.MSFT.OSS/en/MSFT.OSS.Community.md"
+                                "helpUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.Community.md"
                             }
                         ],
                         "associatedComponent": {
@@ -61,6 +61,13 @@
             "invocations": [
                 {
                     "executionSuccessful": true
+                }
+            ],
+            "versionControlProvenance": [
+                {
+                    "repositoryUri": "https://github.com/BernieWhite/PSRule-testing",
+                    "revisionId": "aaaa14ed8dc3fd8193a4e4535aca5e0818d06c05",
+                    "branch": "bewhite/bad-templates"
                 }
             ],
             "originalUriBaseIds": {
@@ -209,7 +216,7 @@
                 }
             ],
             "automationDetails": {
-                "id": "4b1d9aeb90eea9c2505d5229740de5e0f83a5726"
+                "id": "3fe5814ab7c3ff0ed58581869bb99deb87e3daa5"
             },
             "columnKind": "utf16CodeUnits"
         }
