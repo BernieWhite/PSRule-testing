@@ -1,0 +1,328 @@
+{
+    "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+    "version": "2.1.0",
+    "runs": [
+        {
+            "taxonomies": [
+                {
+                    "guid": "1A567403-868F-405E-92CF-771A9ECB03A1",
+                    "informationUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.License.md",
+                    "organization": "Microsoft",
+                    "name": "Well-Architected",
+                    "version": "1.0.0",
+                    "fullDescription": {
+                        "text": "Azure Well-Architected Framework"
+                    },
+                    "taxa": [
+                        {
+                            "id": "101",
+                            "name": "Security",
+                            "guid": "10F28368-3A92-4396-A318-75B9743282F6",
+                            "shortDescription": {
+                                "text": "Rules in this category are required by company policy. All violations must be fixed unless an exemption is granted."
+                            }
+                        },
+                        {
+                            "id": "102",
+                            "name": "Reliability",
+                            "guid": "A9282C88-F1FE-4A01-8137-E8D2A037AB82",
+                            "shortDescription": {
+                                "text": "Rules in this category are recommended but not required by company policy. Violations should be fixed but an exemption is not required to suppress a result."
+                            }
+                        }
+                    ]
+                }
+            ],
+            "tool": {
+                "driver": {
+                    "guid": "0130215d-58eb-4887-b6fa-31ed02500569",
+                    "name": "PSRule",
+                    "organization": "Microsoft Corporation",
+                    "semanticVersion": "0.0.1+9a56aa8fae25427c43254df008fd41c1f0072de7",
+                    "informationUri": "https://aka.ms/ps-rule",
+                    "supportedTaxonomies": [
+                        {
+                            "guid": "1A567403-868F-405E-92CF-771A9ECB03A1",
+                            "name": "Well-Architected"
+                        }
+                    ]
+                },
+                "extensions": [
+                    {
+                        "guid": "7bfb5234-1648-4e52-956c-42f303d416cb",
+                        "name": "PSRule.Rules.MSFT.OSS",
+                        "organization": "Microsoft Corporation",
+                        "version": "0.0.1",
+                        "informationUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS",
+                        "taxa": [
+                            {
+                                "id": "101",
+                                "name": "Security",
+                                "guid": "10F28368-3A92-4396-A318-75B9743282F6",
+                                "shortDescription": {
+                                    "text": "Rules in this category are required by company policy. All violations must be fixed unless an exemption is granted."
+                                }
+                            },
+                            {
+                                "id": "102",
+                                "name": "Reliability",
+                                "guid": "A9282C88-F1FE-4A01-8137-E8D2A037AB82",
+                                "shortDescription": {
+                                    "text": "Rules in this category are recommended but not required by company policy. Violations should be fixed but an exemption is not required to suppress a result."
+                                }
+                            }
+                        ],
+                        "supportedTaxonomies": [
+                            {
+                                "guid": "1A567403-868F-405E-92CF-771A9ECB03A1",
+                                "name": "Well-Architected"
+                            }
+                        ],
+                        "rules": [
+                            {
+                                "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.License",
+                                "name": "MSFT.OSS.License",
+                                "fullDescription": {
+                                    "text": "Code files should include standard MIT license header."
+                                },
+                                "messageStrings": {
+                                    "recommendation": {
+                                        "text": "Consider adding standard license header to code files."
+                                    }
+                                },
+                                "help": {
+                                    "text": "Code files should include standard MIT license header.",
+                                    "markdown": "Code files should include standard MIT license header. [Help](https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.License.md)"
+                                },
+                                "shortDescription": {
+                                    "text": "Consider adding standard license header to code files."
+                                },
+                                "defaultConfiguration": {
+                                    "level": "error"
+                                },
+                                "helpUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.License.md",
+                                "properties": {
+                                    "tags": [
+                                        "oss",
+                                        "license"
+                                    ],
+                                    "openSource": {
+                                        "informationUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.License.md"
+                                    }
+                                },
+                                "relationships": [
+                                    {
+                                        "target": {
+                                            "id": "101",
+                                            "guid": "1A567403-868F-405E-92CF-771A9ECB03A1",
+                                            "index": 0,
+                                            "toolComponent": {
+                                                "name": "Well-Architected",
+                                                "guid": "10F28368-3A92-4396-A318-75B9743282F6",
+                                                "index": 0
+                                            }
+                                        },
+                                        "kinds": [
+                                            "superset"
+                                        ],
+                                        "description": {
+                                            "text": "This relationship specifies that this rule is classified as 'Required'."
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.Community",
+                                "name": "MSFT.OSS.Community",
+                                "fullDescription": {
+                                    "text": "Use standard files to communicate with the open source community."
+                                },
+                                "messageStrings": {
+                                    "recommendation": {
+                                        "text": "Consider adding required files in addition to GitHub community health files."
+                                    }
+                                },
+                                "defaultConfiguration": {
+                                    "level": "error"
+                                },
+                                "helpUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.Community.md",
+                                "properties": {
+                                    "tags": [
+                                        "oss"
+                                    ]
+                                }
+                            }
+                        ],
+                        "associatedComponent": {
+                            "name": "PSRule"
+                        }
+                    }
+                ]
+            },
+            "invocations": [
+                {
+                    "executionSuccessful": true
+                }
+            ],
+            "versionControlProvenance": [
+                {
+                    "repositoryUri": "https://github.com/BernieWhite/PSRule-testing",
+                    "revisionId": "aaaa14ed8dc3fd8193a4e4535aca5e0818d06c05",
+                    "branch": "bewhite/bad-templates",
+                    "mappedTo": {
+                        "uriBaseId": "REPOROOT"
+                    }
+                }
+            ],
+            "originalUriBaseIds": {
+                "REPOROOT": {
+                    "description": {
+                        "text": "The directory into which the repo was cloned."
+                    }
+                }
+            },
+            "results": [
+                {
+                    "rule": {
+                        "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.License",
+                        "toolComponent": {
+                            "name": "PSRule.Rules.MSFT.OSS",
+                            "index": 0,
+                            "guid": "7bfb5234-1648-4e52-956c-42f303d416cb"
+                        }
+                    },
+                    "level": "error",
+                    "message": {
+                        "text": "Consider adding standard license header to code files."
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "custom-checks.ps1",
+                                    "uriBaseId": "REPOROOT"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            },
+                            "logicalLocations": [
+                                {
+                                    "name": "custom-checks.ps1",
+                                    "fullyQualifiedName": ".ps1/custom-checks.ps1",
+                                    "kind": "object"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "rule": {
+                        "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.License",
+                        "toolComponent": {
+                            "name": "PSRule.Rules.MSFT.OSS",
+                            "index": 0,
+                            "guid": "7bfb5234-1648-4e52-956c-42f303d416cb"
+                        }
+                    },
+                    "level": "error",
+                    "message": {
+                        "text": "Consider adding standard license header to code files."
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "git-checks.ps1",
+                                    "uriBaseId": "REPOROOT"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            },
+                            "logicalLocations": [
+                                {
+                                    "name": "git-checks.ps1",
+                                    "fullyQualifiedName": ".ps1/git-checks.ps1",
+                                    "kind": "object"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "rule": {
+                        "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.Community",
+                        "toolComponent": {
+                            "name": "PSRule.Rules.MSFT.OSS",
+                            "index": 0,
+                            "guid": "7bfb5234-1648-4e52-956c-42f303d416cb"
+                        }
+                    },
+                    "level": "error",
+                    "message": {
+                        "text": "Consider adding required files in addition to GitHub community health files."
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ".git/HEAD",
+                                    "uriBaseId": "REPOROOT"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            },
+                            "logicalLocations": [
+                                {
+                                    "name": "refs/heads/bewhite/bad-templates",
+                                    "fullyQualifiedName": "PSRule.Data.RepositoryInfo/refs/heads/bewhite/bad-templates",
+                                    "kind": "object"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "rule": {
+                        "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.License",
+                        "toolComponent": {
+                            "name": "PSRule.Rules.MSFT.OSS",
+                            "index": 0,
+                            "guid": "7bfb5234-1648-4e52-956c-42f303d416cb"
+                        }
+                    },
+                    "level": "error",
+                    "message": {
+                        "text": "Consider adding standard license header to code files."
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ".ps-rule/Conventions.Rule.ps1",
+                                    "uriBaseId": "REPOROOT"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            },
+                            "logicalLocations": [
+                                {
+                                    "name": ".ps-rule/Conventions.Rule.ps1",
+                                    "fullyQualifiedName": ".ps1/.ps-rule/Conventions.Rule.ps1",
+                                    "kind": "object"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "automationDetails": {
+                "id": "3fe5814ab7c3ff0ed58581869bb99deb87e3daa5"
+            },
+            "columnKind": "utf16CodeUnits"
+        }
+    ]
+}

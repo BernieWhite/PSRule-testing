@@ -1,6 +1,17 @@
 
+convention:
+  include:
+  - '.\InfoHook'
+  - '.\GH-Hook'
+
+input:
+  pathIgnore:
+  - 'out/'
+
 configuration:
   # Use alternative environment tag
   CAF_EnvironmentTag: env
   # Use the following environments
   CAF_Environments: [ 'prod', 'dev', 'uat', 'test' ]
+
+  AZURE_PARAMETER_FILE_EXPANSION: true

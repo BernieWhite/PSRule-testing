@@ -5,10 +5,8 @@ name: CI
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+# - push
+- pull_request
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -23,24 +21,46 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
+    - name: git diff
+      run: . ./git-checks.ps1
+      shell: pwsh
+
+    # - name: Custom checks
+    #   run: . ./custom-checks.ps1 -Token ${{ secrets.GITHUB_TOKEN }}
+    #   shell: pwsh
+
+
 #     - uses: actions/checkout@v2
 #       with:
 #         repository: BernieWhite/Rules.BernieWhite
 #         path: .ps-rule/private/
 
-    - name: Run PSRule analysis
-      uses: microsoft/ps-rule@main
-      with:
-        modules: PSRule.Rules.Azure
-
-    - name: Run export templates
-      run: Install-Module PSRule.Rules.Azure -Force; Get-AzRuleTemplateLink | Export-AzTemplateRuleData -OutputPath out/templates/;
-      shell: pwsh
+    # - name: Run repo data
+    #   run: Install-Module PSRule.Rules.GitHub -Force -AllowPrerelease; Export-GitHubRuleData -UseGitHubToken -OutputPath out/repo/;
+    #   shell: pwsh
 
     - name: Run PSRule analysis
       uses: microsoft/ps-rule@main
       with:
-        inputType: inputPath
-        inputPath: out/templates/
-        modules: PSRule.Rules.Azure,PSRule.Rules.CAF
+        modules: PSRule.Rules.Azure,PSRule.Rules.GitHub,PSRule.Rules.CAF
         prerelease: true
+
+    # - name: Run export templates
+    #   run: Install-Module PSRule.Rules.Azure -Force; Get-AzRuleTemplateLink | Export-AzTemplateRuleData -OutputPath out/templates/;
+    #   shell: pwsh
+
+    # - name: Run GitHub analysis
+    #   uses: microsoft/ps-rule@main
+    #   with:
+    #     inputType: inputPath
+    #     inputPath: out/repo/
+    #     modules: PSRule.Rules.GitHub
+    #     prerelease: true
+
+    # - name: Run Azure analysis
+    #   uses: microsoft/ps-rule@main
+    #   with:
+    #     inputType: inputPath
+    #     inputPath: out/templates/
+    #     modules: PSRule.Rules.Azure,PSRule.Rules.CAF
+    #     prerelease: true
