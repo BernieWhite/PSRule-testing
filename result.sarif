@@ -33,7 +33,13 @@
                                 "defaultConfiguration": {
                                     "level": "error"
                                 },
-                                "helpUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.License.md"
+                                "helpUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.License.md",
+                                "properties": {
+                                    "tags": [
+                                        "oss",
+                                        "license"
+                                    ]
+                                }
                             },
                             {
                                 "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.Community",
@@ -49,7 +55,12 @@
                                 "defaultConfiguration": {
                                     "level": "error"
                                 },
-                                "helpUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.Community.md"
+                                "helpUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.Community.md",
+                                "properties": {
+                                    "tags": [
+                                        "oss"
+                                    ]
+                                }
                             }
                         ],
                         "associatedComponent": {
