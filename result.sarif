@@ -49,8 +49,27 @@
                                     ],
                                     "openSource": {
                                         "informationUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.License.md"
-                                      }
-                                }
+                                    }
+                                },
+                                "relationships": [
+                                    {
+                                        "target": {
+                                            "id": "RQL1001",
+                                            "index": 0,
+                                            "toolComponent": {
+                                                "name": "Requirement levels",
+                                                "guid": "1A567403-868F-405E-92CF-771A9ECB03A1",
+                                                "index": 0
+                                            }
+                                        },
+                                        "kinds": [
+                                            "superset"
+                                        ],
+                                        "description": {
+                                            "text": "This relationship specifies that this rule is classified as 'Required'."
+                                        }
+                                    }
+                                ]
                             },
                             {
                                 "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.Community",
@@ -80,6 +99,32 @@
                     }
                 ]
             },
+            "taxonomies": [
+                {
+                    "guid": "1A567403-868F-405E-92CF-771A9ECB03A1",
+                    "informationUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.License.md",
+                    "name": "Well-Architected",
+                    "fullDescription": {
+                        "text": "Azure Well-Architected Framework"
+                    },
+                    "taxa": [
+                        {
+                            "id": "RQL1001",
+                            "name": "Required",
+                            "shortDescription": {
+                                "text": "Rules in this category are required by company policy. All violations must be fixed unless an exemption is granted."
+                            }
+                        },
+                        {
+                            "id": "RQL1002",
+                            "name": "Recommended",
+                            "shortDescription": {
+                                "text": "Rules in this category are recommended but not required by company policy. Violations should be fixed but an exemption is not required to suppress a result."
+                            }
+                        }
+                    ]
+                }
+            ],
             "invocations": [
                 {
                     "executionSuccessful": true
