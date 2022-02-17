@@ -3,6 +3,36 @@
     "version": "2.1.0",
     "runs": [
         {
+            "taxonomies": [
+                {
+                    "guid": "1A567403-868F-405E-92CF-771A9ECB03A1",
+                    "informationUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.License.md",
+                    "organization": "Microsoft",
+                    "name": "Well-Architected",
+                    "version": "1.0.0",
+                    "fullDescription": {
+                        "text": "Azure Well-Architected Framework"
+                    },
+                    "taxa": [
+                        {
+                            "id": "101",
+                            "name": "Security",
+                            "guid": "10F28368-3A92-4396-A318-75B9743282F6",
+                            "shortDescription": {
+                                "text": "Rules in this category are required by company policy. All violations must be fixed unless an exemption is granted."
+                            }
+                        },
+                        {
+                            "id": "102",
+                            "name": "Reliability",
+                            "guid": "A9282C88-F1FE-4A01-8137-E8D2A037AB82",
+                            "shortDescription": {
+                                "text": "Rules in this category are recommended but not required by company policy. Violations should be fixed but an exemption is not required to suppress a result."
+                            }
+                        }
+                    ]
+                }
+            ],
             "tool": {
                 "driver": {
                     "guid": "0130215d-58eb-4887-b6fa-31ed02500569",
@@ -65,7 +95,7 @@
                                 "relationships": [
                                     {
                                         "target": {
-                                            "id": "security",
+                                            "id": "101",
                                             "guid": "10F28368-3A92-4396-A318-75B9743282F6",
                                             "toolComponent": {
                                                 "name": "Well-Architected",
@@ -109,34 +139,6 @@
                     }
                 ]
             },
-            "taxonomies": [
-                {
-                    "guid": "1A567403-868F-405E-92CF-771A9ECB03A1",
-                    "informationUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.License.md",
-                    "name": "Well-Architected",
-                    "fullDescription": {
-                        "text": "Azure Well-Architected Framework"
-                    },
-                    "taxa": [
-                        {
-                            "id": "security",
-                            "name": "Security",
-                            "guid": "10F28368-3A92-4396-A318-75B9743282F6",
-                            "shortDescription": {
-                                "text": "Rules in this category are required by company policy. All violations must be fixed unless an exemption is granted."
-                            }
-                        },
-                        {
-                            "id": "reliability",
-                            "name": "Reliability",
-                            "guid": "A9282C88-F1FE-4A01-8137-E8D2A037AB82",
-                            "shortDescription": {
-                                "text": "Rules in this category are recommended but not required by company policy. Violations should be fixed but an exemption is not required to suppress a result."
-                            }
-                        }
-                    ]
-                }
-            ],
             "invocations": [
                 {
                     "executionSuccessful": true
@@ -188,16 +190,6 @@
                                     "kind": "object"
                                 }
                             ]
-                        }
-                    ],
-                    "taxa": [
-                        {
-                            "id": "security",
-                            "guid": "10F28368-3A92-4396-A318-75B9743282F6",
-                            "toolComponent": {
-                                "name": "Well-Architected",
-                                "guid": "1A567403-868F-405E-92CF-771A9ECB03A1"
-                            }
                         }
                     ]
                 },
