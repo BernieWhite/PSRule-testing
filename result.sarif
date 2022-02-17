@@ -24,6 +24,12 @@
                         "organization": "Microsoft Corporation",
                         "version": "0.0.1",
                         "informationUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS",
+                        "supportedTaxonomies": [
+                            {
+                                "guid": "1A567403-868F-405E-92CF-771A9ECB03A1",
+                                "name": "Well-Architected"
+                            }
+                        ],
                         "rules": [
                             {
                                 "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.License",
