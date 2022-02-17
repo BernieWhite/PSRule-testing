@@ -54,6 +54,24 @@
                         "organization": "Microsoft Corporation",
                         "version": "0.0.1",
                         "informationUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS",
+                        "taxa": [
+                            {
+                                "id": "101",
+                                "name": "Security",
+                                "guid": "10F28368-3A92-4396-A318-75B9743282F6",
+                                "shortDescription": {
+                                    "text": "Rules in this category are required by company policy. All violations must be fixed unless an exemption is granted."
+                                }
+                            },
+                            {
+                                "id": "102",
+                                "name": "Reliability",
+                                "guid": "A9282C88-F1FE-4A01-8137-E8D2A037AB82",
+                                "shortDescription": {
+                                    "text": "Rules in this category are recommended but not required by company policy. Violations should be fixed but an exemption is not required to suppress a result."
+                                }
+                            }
+                        ],
                         "supportedTaxonomies": [
                             {
                                 "guid": "1A567403-868F-405E-92CF-771A9ECB03A1",
