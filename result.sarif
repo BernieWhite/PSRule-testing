@@ -37,7 +37,8 @@
                                 "properties": {
                                     "tags": [
                                         "oss",
-                                        "license"
+                                        "license",
+                                        "pillar: security"
                                     ]
                                 }
                             },
