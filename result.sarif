@@ -150,7 +150,10 @@
                 {
                     "repositoryUri": "https://github.com/BernieWhite/PSRule-testing",
                     "revisionId": "aaaa14ed8dc3fd8193a4e4535aca5e0818d06c05",
-                    "branch": "bewhite/bad-templates"
+                    "branch": "bewhite/bad-templates",
+                    "mappedTo": {
+                        "uriBaseId": "REPOROOT"
+                    }
                 }
             ],
             "originalUriBaseIds": {
