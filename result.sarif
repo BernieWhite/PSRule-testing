@@ -30,6 +30,12 @@
                                         "text": "Consider adding standard license header to code files."
                                     }
                                 },
+                                "help": {
+                                    "text": "Detailed help."
+                                },
+                                "shortDescription": {
+                                    "text": "Short description."
+                                },
                                 "defaultConfiguration": {
                                     "level": "error"
                                 },
