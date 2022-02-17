@@ -8,7 +8,7 @@
                     "guid": "0130215d-58eb-4887-b6fa-31ed02500569",
                     "name": "PSRule",
                     "organization": "Microsoft Corporation",
-                    "semanticVersion": "0.0.1+9a56aa8fae25427c43254df008fd41c1f0072de7",
+                    "semanticVersion": "2.0.0-B2202056+9a56aa8fae25427c43254df008fd41c1f0072de7",
                     "informationUri": "https://aka.ms/ps-rule"
                 },
                 "extensions": [
@@ -16,7 +16,7 @@
                         "guid": "7bfb5234-1648-4e52-956c-42f303d416cb",
                         "name": "PSRule.Rules.MSFT.OSS",
                         "organization": "Microsoft Corporation",
-                        "version": "0.0.1",
+                        "version": "1.0.1",
                         "informationUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS",
                         "rules": [
                             {
@@ -33,7 +33,23 @@
                                 "defaultConfiguration": {
                                     "level": "error"
                                 },
-                                "helpUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/docs/rules/en/MSFT.OSS.License.md"
+                                "helpUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/src/PSRule.Rules.MSFT.OSS/en/MSFT.OSS.License.md"
+                            },
+                            {
+                                "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.Community",
+                                "name": "MSFT.OSS.Community",
+                                "fullDescription": {
+                                    "text": "Use standard files to communicate with the open source community."
+                                },
+                                "messageStrings": {
+                                    "recommendation": {
+                                        "text": "Consider adding required files in addition to GitHub community health files."
+                                    }
+                                },
+                                "defaultConfiguration": {
+                                    "level": "error"
+                                },
+                                "helpUri": "https://github.com/microsoft/PSRule.Rules.MSFT.OSS/blob/main/src/PSRule.Rules.MSFT.OSS/en/MSFT.OSS.Community.md"
                             }
                         ],
                         "associatedComponent": {
@@ -45,13 +61,6 @@
             "invocations": [
                 {
                     "executionSuccessful": true
-                }
-            ],
-            "versionControlProvenance": [
-                {
-                    "repositoryUri": "https://github.com/BernieWhite/PSRule-testing",
-                    "revisionId": "c5fbe549a8b73179da831ec089b6f6c54abf3e51",
-                    "branch": "main"
                 }
             ],
             "originalUriBaseIds": {
@@ -79,7 +88,7 @@
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "build.ps1",
+                                    "uri": "custom-checks.ps1",
                                     "uriBaseId": "REPOROOT"
                                 },
                                 "region": {
@@ -88,8 +97,110 @@
                             },
                             "logicalLocations": [
                                 {
-                                    "name": "build.ps1",
-                                    "fullyQualifiedName": ".ps1/build.ps1",
+                                    "name": "custom-checks.ps1",
+                                    "fullyQualifiedName": ".ps1/custom-checks.ps1",
+                                    "kind": "object"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "rule": {
+                        "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.License",
+                        "toolComponent": {
+                            "name": "PSRule.Rules.MSFT.OSS",
+                            "index": 0,
+                            "guid": "7bfb5234-1648-4e52-956c-42f303d416cb"
+                        }
+                    },
+                    "level": "error",
+                    "message": {
+                        "text": "Consider adding standard license header to code files."
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "git-checks.ps1",
+                                    "uriBaseId": "REPOROOT"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            },
+                            "logicalLocations": [
+                                {
+                                    "name": "git-checks.ps1",
+                                    "fullyQualifiedName": ".ps1/git-checks.ps1",
+                                    "kind": "object"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "rule": {
+                        "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.Community",
+                        "toolComponent": {
+                            "name": "PSRule.Rules.MSFT.OSS",
+                            "index": 0,
+                            "guid": "7bfb5234-1648-4e52-956c-42f303d416cb"
+                        }
+                    },
+                    "level": "error",
+                    "message": {
+                        "text": "Consider adding required files in addition to GitHub community health files."
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ".git/HEAD",
+                                    "uriBaseId": "REPOROOT"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            },
+                            "logicalLocations": [
+                                {
+                                    "name": "refs/heads/bewhite/bad-templates",
+                                    "fullyQualifiedName": "PSRule.Data.RepositoryInfo/refs/heads/bewhite/bad-templates",
+                                    "kind": "object"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "rule": {
+                        "id": "PSRule.Rules.MSFT.OSS\\MSFT.OSS.License",
+                        "toolComponent": {
+                            "name": "PSRule.Rules.MSFT.OSS",
+                            "index": 0,
+                            "guid": "7bfb5234-1648-4e52-956c-42f303d416cb"
+                        }
+                    },
+                    "level": "error",
+                    "message": {
+                        "text": "Consider adding standard license header to code files."
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": ".ps-rule/Conventions.Rule.ps1",
+                                    "uriBaseId": "REPOROOT"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            },
+                            "logicalLocations": [
+                                {
+                                    "name": ".ps-rule/Conventions.Rule.ps1",
+                                    "fullyQualifiedName": ".ps1/.ps-rule/Conventions.Rule.ps1",
                                     "kind": "object"
                                 }
                             ]
@@ -98,7 +209,7 @@
                 }
             ],
             "automationDetails": {
-                "id": "542c7c1f90066206aa4aa0a8d39bf892e640edc2"
+                "id": "4b1d9aeb90eea9c2505d5229740de5e0f83a5726"
             },
             "columnKind": "utf16CodeUnits"
         }
