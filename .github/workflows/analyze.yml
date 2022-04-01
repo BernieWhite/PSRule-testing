@@ -48,5 +48,18 @@ jobs:
     - name: Update build number
       env:
         GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      shell: pwsh
       run: |
-        gh pr comment ${{ github.event.pull_request.number }} --body 'Your build number is: `${{ github.run_id }}`'
+        $pr = gh pr view 14 --json comments,number,milestone | ConvertFrom-Json
+        # $action_comments = $pr.comments | ? { $_.author.login -eq 'github-actions' }
+        $action_comments = @(gh api -X GET /repos/BernieWhite/PSRule-Testing/issues/${{ github.event.pull_request.number }}/comments | ConvertFrom-Json | Where-Object {
+          $_.user.login -eq 'github-actions[bot]'
+        })
+
+        if ($action_comments.Length -gt 0) {
+          foreach ($comment in $action_comments) {
+            gh api -X DELETE $comment.url
+          }
+        }
+        gh pr comment ${{ github.event.pull_request.number }} --body 'Your build number is: `${{ github.run_number }}`'
+
