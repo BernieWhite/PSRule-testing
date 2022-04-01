@@ -44,3 +44,7 @@ jobs:
         inputPath: out/templates/
         modules: PSRule.Rules.Azure,PSRule.Rules.CAF
         prerelease: true
+
+    - name: Update build number
+      run: |
+        gh pr edit ${{ github.event.pull_request.id }} --title ${{ github.event.pull_request.title }} '${{ github.run_id }}''
