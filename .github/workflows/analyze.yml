@@ -49,4 +49,4 @@ jobs:
       env:
         GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       run: |
-        gh pr comment ${{ github.event.pull_request.number }} --body 'Your build number is: `${{ github.run_id }}`'
+        gh pr comment ${{ github.event.pull_request.number }} --body 'Your build number is: `${{ github.github.run_number }}`'
