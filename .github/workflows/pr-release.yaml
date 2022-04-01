@@ -1,0 +1,16 @@
+
+name: Pre-Release
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  dev:
+    name: Release
+    runs-on: ubuntu-latest
+    if: ${{ startsWith(github.event.milestone.title, 'v') }}
+    steps:
+    - run: |
+         gh release create ${{ github.event.milestone.title }} --generate-notes --target ${{ github.base_ref }}
