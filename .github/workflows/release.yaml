@@ -1,0 +1,23 @@
+
+name: Release
+
+on:
+  push:
+    branches:
+    - main
+    tags:
+    - 'v1.*'
+
+jobs:
+  stable:
+    name: Stable
+    runs-on: ubuntu-latest
+    steps:
+    - uses: echo 'Hello'
+
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+    - uses: echo 'Hello'
+
