@@ -13,11 +13,11 @@ jobs:
     name: Stable
     runs-on: ubuntu-latest
     steps:
-    - uses: echo 'Hello'
+    - run: echo 'Hello'
 
   ci:
     name: CI
     runs-on: ubuntu-latest
     steps:
-    - uses: echo 'Hello'
+    - run: echo 'Hello'
 
