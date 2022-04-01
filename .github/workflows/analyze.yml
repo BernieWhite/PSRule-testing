@@ -28,22 +28,22 @@ jobs:
 #         repository: BernieWhite/Rules.BernieWhite
 #         path: .ps-rule/private/
 
-    - name: Run PSRule analysis
-      uses: microsoft/ps-rule@main
-      with:
-        modules: PSRule.Rules.Azure
+    # - name: Run PSRule analysis
+    #   uses: microsoft/ps-rule@main
+    #   with:
+    #     modules: PSRule.Rules.Azure
 
-    - name: Run export templates
-      run: Install-Module PSRule.Rules.Azure -Force; Get-AzRuleTemplateLink | Export-AzTemplateRuleData -OutputPath out/templates/;
-      shell: pwsh
+    # - name: Run export templates
+    #   run: Install-Module PSRule.Rules.Azure -Force; Get-AzRuleTemplateLink | Export-AzTemplateRuleData -OutputPath out/templates/;
+    #   shell: pwsh
 
-    - name: Run PSRule analysis
-      uses: microsoft/ps-rule@main
-      with:
-        inputType: inputPath
-        inputPath: out/templates/
-        modules: PSRule.Rules.Azure,PSRule.Rules.CAF
-        prerelease: true
+    # - name: Run PSRule analysis
+    #   uses: microsoft/ps-rule@main
+    #   with:
+    #     inputType: inputPath
+    #     inputPath: out/templates/
+    #     modules: PSRule.Rules.Azure,PSRule.Rules.CAF
+    #     prerelease: true
 
     - name: Update build number
       run: |
