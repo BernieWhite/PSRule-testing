@@ -52,12 +52,14 @@ jobs:
       run: |
         $pr = gh pr view 14 --json comments,number,milestone | ConvertFrom-Json
         # $action_comments = $pr.comments | ? { $_.author.login -eq 'github-actions' }
-        $action_comments = gh api -X GET /repos/BernieWhite/PSRule-Testing/issues/${{ github.event.pull_request.number }}/comments | ConvertFrom-Json | Where-Object {
+        $action_comments = @(gh api -X GET /repos/BernieWhite/PSRule-Testing/issues/${{ github.event.pull_request.number }}/comments | ConvertFrom-Json | Where-Object {
           $_.user.login -eq 'github-actions[bot]'
-        }
+        })
 
-        if ($Null -ne $action_comments) {
-          gh api -X DELETE $action_comments.url
+        if ($action_comments.Length -gt 0) {
+          foreach ($comment in $action_comments) {
+            gh api -X DELETE $comment.url
+          }
         }
         gh pr comment ${{ github.event.pull_request.number }} --body 'Your build number is: `${{ github.run_number }}`'
 
