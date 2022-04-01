@@ -9,15 +9,23 @@ on:
     - 'v1.*'
 
 jobs:
+  dev:
+    name: Dev
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
+    steps:
+    - run: echo 'Hello DEV'
+
   stable:
     name: Stable
     runs-on: ubuntu-latest
+    if: ${{ startsWith(github.ref, 'refs/tags/v') && !contains(github.ref, '-B') }}
     steps:
-    - run: echo 'Hello'
+    - run: echo 'Hello STABLE'
 
-  ci:
-    name: CI
+  prerelease:
+    name: Pre-release
     runs-on: ubuntu-latest
+    if: ${{ startsWith(github.ref, 'refs/tags/v') && contains(github.ref, '-B') }}
     steps:
-    - run: echo 'Hello'
-
+    - run: echo 'Hello PRERELEASE'
