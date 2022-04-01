@@ -46,5 +46,7 @@ jobs:
     #     prerelease: true
 
     - name: Update build number
+      env:
+        GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       run: |
         gh pr comment ${{ github.event.pull_request.number }} --body 'Your build number is: `${{ github.run_id }}`'
