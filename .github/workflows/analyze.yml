@@ -47,4 +47,4 @@ jobs:
 
     - name: Update build number
       run: |
-        gh pr edit ${{ github.event.pull_request.id }} --title ${{ github.event.pull_request.title }} '${{ github.run_id }}''
+        gh pr comment ${{ github.event.pull_request.number }} --body 'Your build number is: `${{ github.run_id }}`'

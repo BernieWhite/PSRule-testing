@@ -17,12 +17,14 @@ jobs:
     - run: echo 'Hello DEV'
 
   stable:
+  # v1.0.0
     name: Stable
     runs-on: ubuntu-latest
     if: ${{ startsWith(github.ref, 'refs/tags/v') && !contains(github.ref, '-B') }}
     steps:
     - run: echo 'Hello STABLE'
 
+  # v1.0.0-B2342342
   prerelease:
     name: Pre-release
     runs-on: ubuntu-latest
