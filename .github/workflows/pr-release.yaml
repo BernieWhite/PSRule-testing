@@ -10,7 +10,7 @@ jobs:
   dev:
     name: Release
     runs-on: ubuntu-latest
-    if: ${{ startsWith(github.event.milestone.title, 'v') }}
+    if: ${{ startsWith(github.event.pull_request.milestone.title, 'v') && github.event.pull_request.merged }}
     steps:
     - run: |
-         gh release create ${{ github.event.milestone.title }} --generate-notes --target ${{ github.base_ref }}
+         gh release create ${{ github.event.pull_request.milestone.title }} --generate-notes --target ${{ github.base_ref }}
